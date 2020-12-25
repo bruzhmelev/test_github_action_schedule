@@ -5,7 +5,7 @@ on:
   push:
     branches: [ l10n-to-crowdin ]
   schedule:
-    - cron: "*/1 * * * *"
+    - cron: "*/5 * * * *"
 
 jobs:
   synchronize-with-crowdin:
