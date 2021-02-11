@@ -1,0 +1,24 @@
+name: Recreating branch l10n-to-crowdin
+
+on:
+  workflow_dispatch:
+  delete:
+    ref: l10n-to-crowdin
+
+jobs:
+  recreate-branch:
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        ref: master
+
+    - name: Create branch l10n-to-crowdin from master
+      shell: bash
+      run: |
+        git fetch
+        git checkout -b l10n-to-crowdin
+        git push -u origin HEAD
